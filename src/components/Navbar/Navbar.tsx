@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import styles from "./Navbar.module.css";
@@ -9,9 +10,21 @@ export default function Navbar() {
 	};
 	return (
 		<>
-			{sidebar && (
-				<Sidebar sidebar={sidebar} sidebarHandler={sidebarHandler} />
-			)}
+			<AnimatePresence>
+				{sidebar && (
+					<>
+						<Sidebar sidebarHandler={sidebarHandler} />
+						<motion.div
+							className={styles.overlay}
+							onClick={sidebarHandler}
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							transition={{ duration: 0.1 }}
+							exit={{ opacity: 0 }}
+						></motion.div>
+					</>
+				)}
+			</AnimatePresence>
 			<nav className={styles.navbar}>
 				<div className={styles.logoAndHeading}>
 					<img
