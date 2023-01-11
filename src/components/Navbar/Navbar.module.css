@@ -15,6 +15,12 @@
     font-family: Helvetica, sans-serif;
 }
 
+.sidebarIcon {
+    height: 30px;
+    background-color: rgb(112, 112, 252);
+    border-radius: 5px;
+}
+
 .logo {
     height: 65px;
     margin-left: 30px;
