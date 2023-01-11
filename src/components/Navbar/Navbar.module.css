@@ -1,0 +1,27 @@
+.navbar {
+    background-color: rgb(167, 226, 255);
+    height: 65px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* padding: 0 10px; */
+    align-items: center;
+}
+
+.heading {
+    color: blueviolet;
+    font-size: 25px;
+    margin-left: 5px;
+    font-family: Helvetica, sans-serif;
+}
+
+.logo {
+    height: 65px;
+    margin-left: 30px;
+}
+
+.logoAndHeading {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
