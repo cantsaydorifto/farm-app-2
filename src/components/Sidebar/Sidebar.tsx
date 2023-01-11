@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Sidebar.module.css";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import SidebarContent from "../SidebarContent/SidebarContent";
 
 interface SidebarProps {
 	sidebarHandler(): void;
@@ -32,6 +33,7 @@ export default function Sidebar({ sidebarHandler }: SidebarProps) {
 					/>
 					<h1 className={styles.heading}>Farmer's Market</h1>
 				</div>
+				<SidebarContent sidebarHandler={sidebarHandler} />
 			</motion.div>
 		</>
 	);
