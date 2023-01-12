@@ -1,6 +1,6 @@
 import React from "react";
 import { useReducer } from "react";
-import productData from "../../product-data";
+import { productData } from "../../product-data";
 import { ProviderProps } from "../types";
 import { ProductContext } from "./context";
 import { productReducer } from "./reducer";
@@ -8,6 +8,8 @@ import { productReducer } from "./reducer";
 const initialState = {
 	...productData,
 };
+
+console.log(initialState)
 
 export const ProductContextProvider = (props: ProviderProps) => {
 	const [state, dispatch] = useReducer(productReducer, initialState);

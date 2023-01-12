@@ -1,4 +1,19 @@
-const productData = {
+export type productCategory = "fruits" | "vegetables" | "dairy" | "gifts" | "meat";
+
+type product = {
+	name: string;
+	count: number;
+	key: string;
+	link: string;
+	category: productCategory;
+	price: number;
+};
+
+export type productDataType = {
+	[key in productCategory]: product[];
+};
+
+export const productData: productDataType = {
 	fruits: [
 		{
 			name: "Apple",
@@ -314,5 +329,3 @@ const productData = {
 		},
 	],
 };
-
-export default productData;

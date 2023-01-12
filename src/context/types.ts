@@ -1,4 +1,4 @@
-import productData from "../product-data";
+import {productData} from "../product-data";
 
 //common context types
 export interface ProviderProps {

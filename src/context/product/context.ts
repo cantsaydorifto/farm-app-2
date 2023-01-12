@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import productData from "../../product-data";
+import {productData} from "../../product-data";
 import { ProductCtxt } from "../types";
 
 const initialState = {
