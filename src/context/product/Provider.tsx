@@ -9,8 +9,6 @@ const initialState = {
 	...productData,
 };
 
-console.log(initialState)
-
 export const ProductContextProvider = (props: ProviderProps) => {
 	const [state, dispatch] = useReducer(productReducer, initialState);
 	return (
