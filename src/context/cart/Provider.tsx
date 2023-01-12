@@ -1,14 +1,10 @@
-import React, { createContext } from "react";
+import React from "react";
 import { useReducer } from "react";
-import { CartCtxt, CartState, ProviderProps } from "../types";
+import { CartState, ProviderProps } from "../types";
+import { CartContext } from "./context";
 import { cartReducer } from "./reducer";
 
 const initialState: CartState = [];
-
-const CartContext = createContext<CartCtxt>({
-	state: initialState,
-	dispatch: () => {},
-});
 
 export const CartContextProvider = (props: ProviderProps) => {
 	const [state, dispatch] = useReducer(cartReducer, initialState);
