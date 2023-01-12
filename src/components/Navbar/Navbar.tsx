@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
+import Cart from "../Cart/Cart";
 import Sidebar from "../Sidebar/Sidebar";
 import styles from "./Navbar.module.css";
 
@@ -40,6 +41,7 @@ export default function Navbar() {
 					/>
 					<h1 className={styles.heading}>Farmer's Market</h1>
 				</div>
+				<Cart />
 			</nav>
 		</>
 	);
