@@ -1,0 +1,46 @@
+.count {
+    background-color: lavender;
+    border-radius: 6px;
+    width: 35%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    user-select: none;
+}
+
+.removeItem {
+    background-color: rgb(151, 151, 218);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+    height: 50%;
+    font-size: larger;
+    width: 25%;
+    transition: filter 150ms;
+}
+
+.removeItem:hover {
+    filter: brightness(0.8);
+}
+
+.addItem {
+    background-color: rgb(151, 151, 218);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5%;
+    height: 50%;
+    font-size: larger;
+    width: 25%;
+    transition: filter 150ms;
+}
+
+.addItem:hover {
+    filter: brightness(0.7);
+}
