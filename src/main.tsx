@@ -8,10 +8,8 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<ProductContextProvider>
-		<CartContextProvider>
-			<Router>
-				<App />
-			</Router>
-		</CartContextProvider>
+		<Router>
+			<App />
+		</Router>
 	</ProductContextProvider>
 );
