@@ -15,12 +15,14 @@ export const productReducer = (state: StateType, action: Action) => {
 			const idx = state.cartData.findIndex(
 				(x) => x.key === action.payload.id
 			);
+			const item = state.productData[action.payload.name][index];
 			if (idx === -1) {
-				const item = state.productData[action.payload.name][index];
 				state.cartData.push({
 					...item,
 					productIndex: index,
 				});
+			} else {
+				state.cartData[idx].count++;
 			}
 			return {
 				...state,
@@ -36,10 +38,15 @@ export const productReducer = (state: StateType, action: Action) => {
 			const index = state.productData[action.payload.name].findIndex(
 				(x) => x.key === action.payload.id
 			);
+			const idx = state.cartData.findIndex(
+				(x) => x.key === action.payload.id
+			);
 			if (state.productData[action.payload.name][index].count === 0) {
 				state.cartData = state.cartData.filter(
 					(el) => el.key !== action.payload.id
 				);
+			} else {
+				state.cartData[idx].count--;
 			}
 			return {
 				...state,
@@ -52,6 +59,9 @@ export const productReducer = (state: StateType, action: Action) => {
 					return true;
 				}
 			});
+			state.cartData = state.cartData.filter(
+				(el) => el.key !== action.payload.id
+			);
 			return {
 				...state,
 			};
