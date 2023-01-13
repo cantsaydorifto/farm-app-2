@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useProductContext } from "../../hooks/useProductContext";
 import styles from "./Cart.module.css";
 import DropdownElements from "../Dropdown/Dropdown";
+import { AnimatePresence } from "framer-motion";
 
 const Cart = () => {
 	const {
@@ -31,9 +32,11 @@ const Cart = () => {
 				/>
 			</div>
 			<div className={styles.count}>{cartData.length}</div>
-			{cartState&&<DropdownElements
-				changeCartState={changeCartState}
-			/>}
+			<AnimatePresence>
+				{cartState && (
+					<DropdownElements changeCartState={changeCartState} />
+				)}
+			</AnimatePresence>
 		</>
 	);
 };
