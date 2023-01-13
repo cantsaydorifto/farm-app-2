@@ -37,7 +37,9 @@ export const productReducer = (state: StateType, action: Action) => {
 				(x) => x.key === action.payload.id
 			);
 			if (state.productData[action.payload.name][index].count === 0) {
-				state.cartData.filter((el) => el.key !== action.payload.id);
+				state.cartData = state.cartData.filter(
+					(el) => el.key !== action.payload.id
+				);
 			}
 			return {
 				...state,
