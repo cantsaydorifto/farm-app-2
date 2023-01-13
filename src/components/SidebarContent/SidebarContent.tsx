@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./SidebarContent.module.css";
 
 interface SidebarContentProps {
@@ -13,9 +14,9 @@ const SidebarContent = ({ sidebarHandler }: SidebarContentProps) => {
 				<h2>Our Top Products</h2>
 			</div>
 			{categories.map((el) => (
-				<div className={styles.linkElement} onClick={sidebarHandler}>
+				<Link to={`/category/${el[0].toLowerCase() + el.slice(1)}`} className={styles.linkElement} onClick={sidebarHandler}>
 					{el}
-				</div>
+				</Link>
 			))}
 		</div>
 	);
