@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useProductContext } from "../../hooks/useProductContext";
 import styles from "./Cart.module.css";
-// import DropdownElements from "../Dropdown/Dropdown";
+import DropdownElements from "../Dropdown/Dropdown";
 
 const Cart = () => {
 	const {
@@ -11,17 +11,21 @@ const Cart = () => {
 	const navigate = useNavigate();
 
 	const cartHandler = () => {
-		navigate('/cart');
+		navigate("/cart");
 	};
 
 	const [cartState, setCartState] = useState(false);
+	const changeCartState = () => {
+		setCartState((prev) => !prev);
+	};
+
 	return (
 		<>
 			<div
 				className={styles.cart}
 				onClick={cartHandler}
-				onMouseEnter={() => setCartState((prev) => !prev)}
-				onMouseLeave={() => setCartState((prev) => !prev)}
+				onMouseEnter={changeCartState}
+				onMouseLeave={changeCartState}
 			>
 				<img
 					className={styles.logo}
@@ -32,7 +36,10 @@ const Cart = () => {
 				/>
 			</div>
 			<div className={styles.count}>{cartData.length}</div>
-			{/* <DropdownElements cartState={cartState} setCartState={setCartState} /> */}
+			{console.log(cartState)}
+			{cartState&&<DropdownElements
+				changeCartState={changeCartState}
+			/>}
 		</>
 	);
 };
