@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./Homepage.module.css";
 
 const Homepage = () => {
+	const navigate = useNavigate();
 	const arr = [
 		{
 			name: "Dairy",
@@ -33,23 +34,25 @@ const Homepage = () => {
 
 	return (
 		<>
-			<div className="homepage-container">
-				<div className={styles.heading}>Top Products</div>
-				<div className={styles.categoryHeading}>
-					Select From One Of These Categories
-				</div>
-				<div className={styles.categories}>
-					{arr.map((el) => (
-						<Link className={styles.linkElement} to={el.link}>
-							<img
-								className={styles.productImage}
-								src={el.src}
-								alt={el.name}
-							/>
-							<div className={styles.productName}>{el.name}</div>
-						</Link>
-					))}
-				</div>
+			<div className={styles.heading}>Top Products</div>
+			<div className={styles.categoryHeading}>
+				Select From One Of These Categories
+			</div>
+			<div className={styles.categories}>
+				{arr.map((el) => (
+					<div
+						onClick={() => navigate(`${el.link}`)}
+						key={el.name}
+						className={styles.linkElement}
+					>
+						<img
+							className={styles.productImage}
+							src={el.src}
+							alt={el.name}
+						/>
+						<div className={styles.productName}>{el.name}</div>
+					</div>
+				))}
 			</div>
 		</>
 	);

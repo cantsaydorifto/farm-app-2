@@ -36,7 +36,6 @@ const Cart = () => {
 				/>
 			</div>
 			<div className={styles.count}>{cartData.length}</div>
-			{console.log(cartState)}
 			{cartState&&<DropdownElements
 				changeCartState={changeCartState}
 			/>}
