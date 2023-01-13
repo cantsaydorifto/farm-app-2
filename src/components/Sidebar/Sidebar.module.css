@@ -33,3 +33,11 @@
     align-items: center;
     margin-left: 10px;
 }
+
+.homepageLogo{
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
