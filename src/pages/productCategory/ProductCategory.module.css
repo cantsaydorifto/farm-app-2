@@ -32,11 +32,13 @@
 .name {
     font-size: large;
     height: 7.5%;
+    margin: 0;
 }
 
 .price {
     font-size: large;
     height: 7.5%;
+    margin: 0;
 }
 
 .addToCart {
