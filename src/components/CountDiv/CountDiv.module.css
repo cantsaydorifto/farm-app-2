@@ -44,3 +44,24 @@
 .addItem:hover {
     filter: brightness(0.7);
 }
+
+@media all and (max-width:850px) {
+    .count{
+        width: 25%;
+    }
+}
+@media all and (max-width:750px) {
+    .count{
+        width: 30%;
+    }
+}
+@media all and (max-width:600px) {
+    .count{
+        width: 20%;
+    }
+}
+@media all and (max-width:500px) {
+    .count{
+        width: 25%;
+    }
+}
