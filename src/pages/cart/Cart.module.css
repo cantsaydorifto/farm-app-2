@@ -1,8 +1,7 @@
 .container {
-    width: 75%;
+    width: 100%;
     margin-top: 20px;
-    margin-left: 12.5%;
-    margin-right: 12.5%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -22,23 +21,31 @@
     margin-bottom: 30px;
 }
 
+.addRemove {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .itemImg {
-    height: 75px;
-    width: 120px;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
-    border-radius: 3px;
 }
 
 .name {
     color: #3e3572;
     justify-content: space-between;
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     align-items: center;
     width: 50%;
 }
 
 .name>p {
     font-size: larger;
+    margin: 0 auto;
 }
 
 .unitPrice {
@@ -49,18 +56,45 @@
     border-radius: 32px;
 }
 
+.unitPrice>p {
+    margin: 0 auto;
+}
+
+.imgAndName {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 85%;
+}
+
+.priceAndCount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 20%;
+}
+
 .itemCard {
     display: flex;
+    gap: 10px;
+    width: 40vw;
+    max-height: 300px;
+    margin: auto;
+    padding: 20px;
     background-color: lavender;
-    justify-content: space-evenly;
     border-radius: 12px;
-    gap: 20px;
+    justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 250px;
 }
 
 .removeItemButton {
-    height: 30%;
+    min-height: 30%;
     border-radius: 8px;
     padding: 5px;
     border: none;
@@ -104,3 +138,29 @@
     text-align: center;
     width: 100px;
 }
+
+@media all and (max-width:850px) {
+    .itemCard {
+        width: 80vw;
+        height: fit-content;
+    }
+
+    .itemImg {
+        height: 40%;
+    }
+
+    .name {
+        gap: 0;
+    }
+
+    .imgAndName {
+        width: 70%;
+    }
+
+    .priceAndCount {
+        width: 30%;
+        gap: 0;
+    }
+}
+
+@media all and (max-width:550px) {}

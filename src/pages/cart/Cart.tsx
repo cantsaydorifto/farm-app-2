@@ -44,39 +44,51 @@ export default function Cart() {
 				{cartData.map((el) => {
 					return (
 						<div key={el.key} className={styles.itemCard}>
-							<img
-								className={styles.itemImg}
-								src={el.link}
-								alt={`${el.name}`}
-							/>
-							<button
-								className={`${styles.removeItemButton} ${styles.changeCountButton}`}
-								onClick={() => decHandler(el.key, el.category)}
-							>
-								-
-							</button>
-							<div className={styles.itemCount}>{el.count}</div>
-							<button
-								className={`${styles.removeItemButton} ${styles.changeCountButton}`}
-								onClick={() => plusHandler(el.key, el.category)}
-							>
-								+
-							</button>
-							<div className={styles.name}>
+							<div className={styles.imgAndName}>
+								<img
+									className={styles.itemImg}
+									src={el.link}
+									alt={`${el.name}`}
+								/>
 								<div className={styles.unitPrice}>
 									<p>{el.name}</p>
 									<p>${el.price}</p>
 								</div>
-								<p>${el.price * el.count}</p>
 							</div>
-							<button
-								onClick={() =>
-									removeHandler(el.key, el.category)
-								}
-								className={styles.removeItemButton}
-							>
-								Remove Item
-							</button>
+							<div className={styles.priceAndCount}>
+								<button
+									onClick={() =>
+										removeHandler(el.key, el.category)
+									}
+									className={styles.removeItemButton}
+								>
+									Remove Item
+								</button>
+								<div className={styles.name}>
+									<p>${el.price * el.count}</p>
+									<div className={styles.addRemove}>
+										<button
+											className={`${styles.removeItemButton} ${styles.changeCountButton}`}
+											onClick={() =>
+												decHandler(el.key, el.category)
+											}
+										>
+											-
+										</button>
+										<div className={styles.itemCount}>
+											{el.count}
+										</div>
+										<button
+											className={`${styles.removeItemButton} ${styles.changeCountButton}`}
+											onClick={() =>
+												plusHandler(el.key, el.category)
+											}
+										>
+											+
+										</button>
+									</div>
+								</div>
+							</div>
 						</div>
 					);
 				})}
