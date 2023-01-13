@@ -1,9 +1,12 @@
 import { createContext } from "react";
-import {productData} from "../../product-data";
-import { ProductCtxt } from "../types";
+import { productData } from "../../product-data";
+import { CartState, ProductCtxt, StateType } from "../types";
 
-const initialState = {
-	...productData,
+const cartData: CartState = [];
+
+const initialState: StateType = {
+	productData,
+	cartData,
 };
 
 export const ProductContext = createContext<ProductCtxt>({

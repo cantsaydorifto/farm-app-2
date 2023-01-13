@@ -1,12 +1,15 @@
 import React from "react";
 import { useReducer } from "react";
 import { productData } from "../../product-data";
-import { ProviderProps } from "../types";
+import { CartState, ProviderProps, StateType } from "../types";
 import { ProductContext } from "./context";
 import { productReducer } from "./reducer";
 
-const initialState = {
-	...productData,
+const cartData: CartState = [];
+
+const initialState: StateType = {
+	productData,
+	cartData,
 };
 
 export const ProductContextProvider = (props: ProviderProps) => {
