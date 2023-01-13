@@ -54,7 +54,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 80vw;
+        width: 50vw;
         /* height: 200px; */
     }
     .productImage {
@@ -66,5 +66,16 @@
 
     .productName{
         margin: 10px 0;
+    }
+}
+
+@media all and (max-width:850px) {
+    .linkElement {
+        width: 60vw;
+    }
+}
+@media all and (max-width:600px) {
+    .linkElement {
+        width: 80vw;
     }
 }
