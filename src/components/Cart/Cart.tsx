@@ -10,10 +10,6 @@ const Cart = () => {
 	} = useProductContext();
 	const navigate = useNavigate();
 
-	const cartHandler = () => {
-		navigate("/cart");
-	};
-
 	const [cartState, setCartState] = useState(false);
 	const changeCartState = () => {
 		setCartState((prev) => !prev);
@@ -23,7 +19,6 @@ const Cart = () => {
 		<>
 			<div
 				className={styles.cart}
-				onClick={cartHandler}
 				onMouseEnter={changeCartState}
 				onMouseLeave={changeCartState}
 			>
