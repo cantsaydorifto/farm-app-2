@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import CountDiv from "../../components/CountDiv/CountDv.js";
-import { useCartContext } from "../../hooks/useCartContext.js";
 import { useProductContext } from "../../hooks/useProductContext.js";
 import styles from "./ProductCategory.module.css";
 
@@ -11,9 +10,10 @@ const ProductDetails = () => {
 	};
 	const { productName } = useParams() as Params;
 	const headName = productName[0].toUpperCase() + productName.slice(1);
-	const { state: cartData, dispatch: cartDispatch } = useCartContext();
-	const { state: productData, dispatch: productDispatch } =
-		useProductContext();
+	const {
+		state: { productData, cartData },
+		dispatch,
+	} = useProductContext();
 
 	const [turtleSrc, setTurtleSrc] = useState(
 		"https://preview.redd.it/9wy3z3wwx0181.png?width=438&format=png&auto=webp&s=b792fbbf87f07799697eee540cead9fde400f9fb"
@@ -23,36 +23,17 @@ const ProductDetails = () => {
 	);
 
 	const addItemhandler = (id: string, name: keyof typeof productData) => {
-		productDispatch({
+		dispatch({
 			type: "INCREMENT_PRODUCT_COUNT",
 			payload: { name, id },
 		});
-		const index = productData[name].findIndex((x) => x.key === id);
-		const idx = cartData.findIndex((x) => x.key === id);
-		if (idx === -1) {
-			cartDispatch({
-				type: "ADD_TO_CART",
-				payload: {
-					...productData[name][index],
-					productIndex: index,
-				},
-			});
-		}
 	};
 
 	const removeItemhandler = (id: string, name: keyof typeof productData) => {
-		productDispatch({
+		dispatch({
 			type: "DECREMENT_PRODUCT_COUNT",
 			payload: { name, id },
 		});
-		const idx = cartData.findIndex((x) => x.key === id);
-		const index = productData[name].findIndex((x) => x.key === id);
-		if (idx > -1 && productData[name][index].count === 0) {
-			cartDispatch({
-				type: "REMOVE_FROM_CART",
-				payload: id,
-			});
-		}
 	};
 	return (
 		<>
