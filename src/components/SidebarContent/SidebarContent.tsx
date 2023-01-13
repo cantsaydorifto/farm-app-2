@@ -14,7 +14,7 @@ const SidebarContent = ({ sidebarHandler }: SidebarContentProps) => {
 				<h2>Our Top Products</h2>
 			</div>
 			{categories.map((el) => (
-				<Link to={`/category/${el[0].toLowerCase() + el.slice(1)}`} className={styles.linkElement} onClick={sidebarHandler}>
+				<Link key={el} to={`/category/${el[0].toLowerCase() + el.slice(1)}`} className={styles.linkElement} onClick={sidebarHandler}>
 					{el}
 				</Link>
 			))}
