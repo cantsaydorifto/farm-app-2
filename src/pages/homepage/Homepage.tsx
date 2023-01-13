@@ -6,27 +6,27 @@ const Homepage = () => {
 	const arr = [
 		{
 			name: "Dairy",
-			link: "dairy",
+			link: "/category/dairy",
 			src: "https://images.unsplash.com/photo-1628088062854-d1870b4553da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
 		},
 		{
 			name: "Fruits",
-			link: "fruits",
+			link: "/category/fruits",
 			src: "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
 		},
 		{
 			name: "Meat",
-			link: "meat",
+			link: "/category/meat",
 			src: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
 		},
 		{
 			name: "Vegetables",
-			link: "vegetables",
+			link: "/category/vegetables",
 			src: "https://images.unsplash.com/photo-1518843875459-f738682238a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=842&q=80",
 		},
 		{
 			name: "Gifts",
-			link: "gifts",
+			link: "/category/gifts",
 			src: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
 		},
 	];

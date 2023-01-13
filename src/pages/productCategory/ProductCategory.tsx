@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import CountDiv from "../../components/CountDiv/CountDv.js";
 import { useProductContext } from "../../hooks/useProductContext.js";
+import { productCategory } from "../../product-data.js";
 import styles from "./ProductCategory.module.css";
 
 const ProductDetails = () => {
-	type Params = {
-		productName: keyof typeof productData;
+	const category = new Set(["fruits", "dairy", "meat", "gifts","vegetables"]);
+	const { categoryParam } = useParams() as {
+		categoryParam: string;
 	};
-	const { productName } = useParams() as Params;
+	if (!category.has(categoryParam)) {
+		return <h1>category does not exist</h1>;
+	}
+	const productName:productCategory = categoryParam as productCategory;
 	const headName = productName[0].toUpperCase() + productName.slice(1);
 	const {
 		state: { productData, cartData },
