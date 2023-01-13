@@ -9,7 +9,7 @@
     gap: 20px;
     padding: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr; */
 }
 
 .card>img {
@@ -57,4 +57,22 @@
 
 .addToCart:hover {
     filter: brightness(0.95);
+}
+
+@media all and (max-width:1000px) {
+    .container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media all and (max-width:750px) {
+    .container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media all and (max-width:600px) {
+    .container{
+        grid-template-columns: 1fr;
+        width: 80vw;
+        margin: auto;
+    }
 }

@@ -49,3 +49,16 @@
     align-items: center;
     text-decoration: none;
 }
+
+@media all and (max-width:500px) {
+    .logoAndHeading{
+        width: 70%;
+        height: 100%;
+    }
+    .logo{
+        margin-left:10px;
+    }
+    .heading{
+        font-size: large;
+    }
+}
