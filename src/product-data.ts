@@ -1,4 +1,9 @@
-export type productCategory = "fruits" | "vegetables" | "dairy" | "gifts" | "meat";
+export type productCategory =
+	| "fruits"
+	| "vegetables"
+	| "dairy"
+	| "gifts"
+	| "meat";
 
 type product = {
 	name: string;
@@ -238,6 +243,14 @@ export const productData: productDataType = {
 			price: 20,
 		},
 		{
+			name: "Turtles",
+			count: 0,
+			key: `p-${Math.random()}`,
+			link: "https://preview.redd.it/9wy3z3wwx0181.png?width=438&format=png&auto=webp&s=b792fbbf87f07799697eee540cead9fde400f9fb",
+			category: "meat",
+			price: 40,
+		},
+		{
 			name: "Door Mat",
 			count: 0,
 			key: `p-${Math.random()}`,
@@ -294,14 +307,6 @@ export const productData: productDataType = {
 			link: "https://images.unsplash.com/photo-1606728035253-49e8a23146de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
 			category: "meat",
 			price: 170,
-		},
-		{
-			name: "Turtles",
-			count: 0,
-			key: `p-${Math.random()}`,
-			link: "https://preview.redd.it/9wy3z3wwx0181.png?width=438&format=png&auto=webp&s=b792fbbf87f07799697eee540cead9fde400f9fb",
-			category: "meat",
-			price: 40,
 		},
 		{
 			name: "Prawn",
