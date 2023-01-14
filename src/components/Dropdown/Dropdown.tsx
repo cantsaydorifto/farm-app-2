@@ -20,7 +20,7 @@ const DropdownElements = ({ changeCartState }: props) => {
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ type: "spring", duration: 0.35 }}
 				exit={{ y: "-10%", opacity: 0 }}
-				onClick={changeCartState}
+				onTouchStart={changeCartState}
 				onMouseEnter={changeCartState}
 				onMouseLeave={changeCartState}
 				className={styles.dropdown}
