@@ -139,14 +139,14 @@
     width: 100px;
 }
 
-@media all and (max-width:850px) {
+@media all and (max-width:550px) {
     .itemCard {
         width: 80vw;
-        height: fit-content;
+        height: 150px;
     }
 
     .itemImg {
-        height: 40%;
+        height: 90%;
     }
 
     .name {
@@ -163,4 +163,13 @@
     }
 }
 
-@media all and (max-width:550px) {}
+@media all and (max-width:1000px) {
+    .itemCard {
+        /* width: 80vw;*/
+        height: 150px;
+    }
+
+    .itemCard{
+        gap: 20px;
+    }
+}
