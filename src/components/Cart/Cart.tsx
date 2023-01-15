@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useProductContext } from "../../hooks/useProductContext";
 import styles from "./Cart.module.css";
 import DropdownElements from "../Dropdown/Dropdown";
@@ -9,7 +8,6 @@ const Cart = () => {
 	const {
 		state: { cartData },
 	} = useProductContext();
-	const navigate = useNavigate();
 
 	const [cartState, setCartState] = useState(false);
 	const changeCartState = () => {
