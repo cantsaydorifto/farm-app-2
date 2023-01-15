@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import CountDiv from "../../components/CountDiv/CountDv.js";
@@ -6,14 +7,20 @@ import { productCategory } from "../../product-data.js";
 import styles from "./ProductCategory.module.css";
 
 const ProductDetails = () => {
-	const category = new Set(["fruits", "dairy", "meat", "gifts","vegetables"]);
+	const category = new Set([
+		"fruits",
+		"dairy",
+		"meat",
+		"gifts",
+		"vegetables",
+	]);
 	const { categoryParam } = useParams() as {
 		categoryParam: string;
 	};
 	if (!category.has(categoryParam)) {
 		return <h1>category does not exist</h1>;
 	}
-	const productName:productCategory = categoryParam as productCategory;
+	const productName: productCategory = categoryParam as productCategory;
 	const headName = productName[0].toUpperCase() + productName.slice(1);
 	const {
 		state: { productData, cartData },
@@ -41,7 +48,12 @@ const ProductDetails = () => {
 		});
 	};
 	return (
-		<>
+		<motion.div
+			initial={{ opacity: 0, x: -50 }}
+			animate={{ opacity: 1, x: 0 }}
+			exit={{ opacity: 0, x: 50 }}
+			transition={{ type: "tween", duration: 0.2 }}
+		>
 			<h1 className={styles.heading}>{headName}</h1>
 			<div className={styles.container}>
 				{productData[productName].map((el) => {
@@ -93,20 +105,23 @@ const ProductDetails = () => {
 									}
 								/>
 							) : (
-								<div
+								<motion.div
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									transition={{ duration: 0.2 }}
 									onClick={() =>
 										addItemhandler(el.key, el.category)
 									}
 									className={styles.addToCart}
 								>
 									Add To Cart
-								</div>
+								</motion.div>
 							)}
 						</div>
 					);
 				})}
 			</div>
-		</>
+		</motion.div>
 	);
 };
 

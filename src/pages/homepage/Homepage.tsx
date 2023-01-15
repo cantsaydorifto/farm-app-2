@@ -1,9 +1,9 @@
+import { motion } from "framer-motion";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./Homepage.module.css";
 
 const Homepage = () => {
-	const navigate = useNavigate();
 	const arr = [
 		{
 			name: "Dairy",
@@ -33,15 +33,15 @@ const Homepage = () => {
 	];
 
 	return (
-		<>
+		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
 			<div className={styles.heading}>Top Products</div>
 			<div className={styles.categoryHeading}>
 				Select From One Of These Categories
 			</div>
 			<div className={styles.categories}>
 				{arr.map((el) => (
-					<div
-						onClick={() => navigate(`${el.link}`)}
+					<Link
+						to={`${el.link}`}
 						key={el.name}
 						className={styles.linkElement}
 					>
@@ -51,10 +51,10 @@ const Homepage = () => {
 							alt={el.name}
 						/>
 						<div className={styles.productName}>{el.name}</div>
-					</div>
+					</Link>
 				))}
 			</div>
-		</>
+		</motion.div>
 	);
 };
 
